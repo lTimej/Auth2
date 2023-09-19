@@ -1,0 +1,107 @@
+{2023-09-19 20:49:48][DEBUG][auth2.go:Authorize:22] iiiii
+{2023-09-19 20:54:59][DEBUG][auth2.go:Authorize:22] iiiii
+{2023-09-19 20:54:59][INFO][auth2.go:Authorize:23] jjjj
+{2023-09-19 20:58:24][DEBUG][auth2.go:Authorize:22] iiiii123
+{2023-09-19 20:58:24][INFO][auth2.go:Authorize:23] jjjj
+{2023-09-19 21:01:37][DEBUG][auth2.go:Authorize:22] iiiii123
+{2023-09-19 21:01:37][INFO][auth2.go:Authorize:23] jjjj
+{2023-09-19 21:01:37][DEBUG][logger.go:Debug:25] [kkkk]
+{2023-09-19 21:02:17][DEBUG][auth2.go:Authorize:22] iiiii123
+{2023-09-19 21:02:17][INFO][auth2.go:Authorize:23] jjjj
+{2023-09-19 21:02:17][DEBUG][logger.go:Debug:25] kkkk
+{2023-09-19 21:10:18][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 21:10:18][INFO][logger.go:Info:99] hahha
+{2023-09-19 21:10:18][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 21:10:18][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 21:10:18][ERROR][logger.go:Error:103] ifks
+{2023-09-19 21:10:18][FATAL][logger.go:Fatal:107] knvwe
+{2023-09-19 21:11:44][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 21:11:44][INFO][logger.go:Info:99] hahha
+{2023-09-19 21:11:44][FATAL][logger.go:Fatal:107] knvwe
+{2023-09-19 21:12:00][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 21:12:00][INFO][logger.go:Info:99] hahha
+{2023-09-19 21:12:21][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 21:12:21][INFO][logger.go:Info:99] hahha
+{2023-09-19 21:12:21][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 21:12:21][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 21:12:21][ERROR][logger.go:Error:103] ifks
+{2023-09-19 22:42:26][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 22:42:26][INFO][logger.go:Info:99] hahha
+{2023-09-19 22:42:26][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 22:42:26][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 22:42:26][ERROR][logger.go:Error:103] ifks
+{2023-09-19 22:45:20][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 22:45:20][INFO][logger.go:Info:99] hahha
+{2023-09-19 22:45:20][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 22:45:20][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 22:45:20][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:24:14][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:24:14][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:24:14][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:24:14][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:24:14][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:24:29][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:24:29][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:24:29][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:24:29][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:24:29][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:25:29][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:25:29][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:25:29][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:25:29][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:25:29][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:29:22][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:29:22][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:29:22][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:29:22][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:29:22][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:38:57][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:38:57][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:38:57][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:38:57][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:38:57][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:40:33][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:40:33][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:40:33][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:40:33][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:40:33][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:43:17][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:43:17][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:43:17][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:43:17][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:43:17][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:43:17][ERROR][logger.go:Error:103] 你好呀！！！
+{2023-09-19 23:43:20][DEBUG][logger.go:Debug:95] kkkk
+{2023-09-19 23:43:20][INFO][logger.go:Info:99] hahha
+{2023-09-19 23:43:20][WARNING][logger.go:Warn:119] ieii
+{2023-09-19 23:43:20][WARNING][logger.go:Warning:123] ijd
+{2023-09-19 23:43:20][ERROR][logger.go:Error:103] ifks
+{2023-09-19 23:43:20][ERROR][logger.go:Error:103] 你好呀！！！
+{2023-09-20 01:54:57][DEBUG][logger.go:Debug:99] kkkk
+{2023-09-20 01:54:57][INFO][logger.go:Info:103] hahha
+{2023-09-20 01:54:57][WARNING][logger.go:Warn:123] ieii
+{2023-09-20 01:54:57][WARNING][logger.go:Warning:127] ijd
+{2023-09-20 01:54:57][ERROR][logger.go:Error:107] ifks
+{2023-09-20 01:54:57][ERROR][recover.go:1:34] 你好呀！！！
+{2023-09-20 01:55:18][DEBUG][logger.go:Debug:99] kkkk
+{2023-09-20 01:55:18][INFO][logger.go:Info:103] hahha
+{2023-09-20 01:55:18][WARNING][logger.go:Warn:123] ieii
+{2023-09-20 01:55:18][WARNING][logger.go:Warning:127] ijd
+{2023-09-20 01:55:18][ERROR][logger.go:Error:107] ifks
+{2023-09-20 01:55:18][ERROR][recover.go:1:34] 你好呀！！！
+{2023-09-20 02:00:53][DEBUG][logger.go:Debug:99] kkkk
+{2023-09-20 02:00:53][INFO][logger.go:Info:103] hahha
+{2023-09-20 02:00:53][WARNING][logger.go:Warn:123] ieii
+{2023-09-20 02:00:53][WARNING][logger.go:Warning:127] ijd
+{2023-09-20 02:00:53][ERROR][logger.go:Error:107] ifks
+{2023-09-20 02:00:53][ERROR][recover.go:1:45] [Recovery from panic]error: 你好呀！！！request: GET /auth/authorize HTTP/1.1
+Host: 192.168.153.100:8002
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cache-Control: max-age=0
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.28 Safari/537.36 JiSu/100.0.0.28
+
+

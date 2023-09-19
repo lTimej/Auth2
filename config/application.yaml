@@ -16,6 +16,13 @@ logger:
   maxFileSize: 1073741824
   toFile: false
 
+zap:
+  level: "DEBUG"
+  fileName: "auth.log"
+  maxSize: 1073741824
+  maxAge: 1024
+  maxBackups: 1024
+
 redis:
   addr: "127.0.0.1:6379"
   poolSize: 10
