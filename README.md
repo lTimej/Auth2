@@ -2,6 +2,7 @@
 auth2 client
 
 # 项目结构
+```
 ├── app             // 应用目录
 │   ├── controller  // 控制器
 │   ├── dao         // DAO层
@@ -14,3 +15,4 @@ auth2 client
 ├── utils           // 系统工具
 ├── go.mod
 └── main.go
+```
