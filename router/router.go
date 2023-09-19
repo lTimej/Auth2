@@ -1,14 +1,20 @@
 package router
 
 import (
-	"auth2/utils/middlewares"
+	"auth2/config"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Router() *gin.Engine {
-	r := gin.New()
-	r.Use(middlewares.GinLogger(), middlewares.GinRecovery(true))
-	register(r)
+func Router(middlewares ...gin.HandlerFunc) *gin.Engine {
+	var r *gin.Engine
+	if config.ServerConfig.Mode == "dev" {
+		r = gin.Default()
+	} else {
+		r = gin.New()
+	}
+	if len(middlewares) > 0 {
+		r.Use(middlewares...)
+	}
 	return r
 }

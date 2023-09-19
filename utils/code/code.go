@@ -13,6 +13,5 @@ var (
 )
 
 func GetMeg(code uint32) string {
-
 	return msg[code]
 }

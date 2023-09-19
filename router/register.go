@@ -2,11 +2,11 @@ package router
 
 import (
 	"auth2/app/controller"
+
 	"github.com/gin-gonic/gin"
 )
 
-
-func register(router *gin.Engine){
+func Register(router *gin.Engine) {
 	auth_controller := controller.NewAuth()
 	auth_group := router.Group("/auth")
 	{

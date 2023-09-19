@@ -6,6 +6,7 @@ import (
 	"auth2/config"
 	"auth2/router"
 	"auth2/utils/logger"
+	"auth2/utils/middlewares"
 	"fmt"
 	"strconv"
 )
@@ -28,7 +29,8 @@ func main() {
 		panic(fmt.Errorf("load redis failed, reason:%s", err.Error()))
 	}
 
-	router := router.Router()
+	engine := router.Router(middlewares.GinRecovery(true))
+	router.Register(engine)
 	addr := config.ServerConfig.Host + ":" + strconv.Itoa(config.ServerConfig.Port)
-	router.Run(addr)
+	engine.Run(addr)
 }
