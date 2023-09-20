@@ -3,12 +3,16 @@ package code
 const (
 	Success uint32 = iota + 10000
 	ApiError
+	ParamsError
+	DBError
 )
 
 var (
 	msg = map[uint32]string{
-		Success:  "成功",
-		ApiError: "接口错误",
+		Success:     "成功",
+		ApiError:    "接口错误",
+		ParamsError: "参数错误",
+		DBError:     "数据库异常",
 	}
 )
 
