@@ -1,0 +1,123 @@
+definitions:
+  httpResp.Resp:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+  service.OpenIDConfigRequest:
+    properties:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+      issuer:
+        type: string
+      sched_provider_code:
+        type: string
+    required:
+    - client_id
+    - client_secret
+    - issuer
+    type: object
+  service.ProviderApplicationRequest:
+    properties:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+      name:
+        type: string
+      provider_code:
+        type: string
+      redirect_uri:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /auth/applications:
+    get:
+      consumes:
+      - application/json
+      description: 获取服务商应用
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpResp.Resp'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取服务商应用
+      tags:
+      - 服务商相关接口
+  /auth/applications/credentials:
+    get:
+      consumes:
+      - application/json
+      description: 获取生成的应用凭证
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpResp.Resp'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取生成的应用凭证
+      tags:
+      - 服务商相关接口
+  /auth/applications/register:
+    post:
+      consumes:
+      - application/json
+      description: 服务商应用注册
+      parameters:
+      - description: 服务商应用注册参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/service.ProviderApplicationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpResp.Resp'
+      security:
+      - ApiKeyAuth: []
+      summary: 服务商应用注册
+      tags:
+      - 服务商相关接口
+  /auth/odic_providers/register:
+    post:
+      consumes:
+      - application/json
+      description: 服务商注册接口
+      parameters:
+      - description: 服务商注册参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/service.OpenIDConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpResp.Resp'
+      security:
+      - ApiKeyAuth: []
+      summary: 服务商注册接口
+      tags:
+      - 服务商相关接口
+swagger: "2.0"

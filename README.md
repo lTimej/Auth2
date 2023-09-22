@@ -16,3 +16,18 @@ auth2 client
 ├── go.mod
 └── main.go
 ```
+
+# swagger 文档
+go get  github.com/swaggo/swag/cmd/swag@latest
+
+cd /root/go/pkg/mod/github.com/swaggo/swag@v1.16.2/cmd/swag
+go build
+mv swag /usr/local/go/bin
+
+### 执行完在项目目录生成docs文件夹
+./docs
+├── docs.go
+├── swagger.json
+└── swagger.yaml
+
+swag init

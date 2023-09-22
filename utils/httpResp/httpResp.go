@@ -1,32 +1,32 @@
 package httpResp
 
 import (
-	"reflect"
 	"net/http"
+	"reflect"
+
 	// "fmt"
 	code2 "auth2/utils/code"
 	"sync"
 )
 
-
-type Resp struct{
+type Resp struct {
 	Data interface{} `json:"data"`
-	Msg string `json:"msg"`
-	Code uint32 `json:"code"`
+	Msg  string      `json:"msg"`
+	Code uint32      `json:"code"`
 }
 
-type Response struct{
+type Response struct {
 	HttpStatus int
-	Result Resp
+	Result     Resp
 }
 
 var pool = sync.Pool{
-	New: func()interface{}{
+	New: func() interface{} {
 		return &Response{}
 	},
 }
 
-func NewResponseOk(status int, code uint32, data interface{})*Response{
+func NewResponseOk(status int, code uint32, data interface{}) *Response {
 	response := pool.Get().(*Response)
 	response.HttpStatus = status
 	response.Result.Code = code
@@ -35,7 +35,7 @@ func NewResponseOk(status int, code uint32, data interface{})*Response{
 	return response
 }
 
-func NewResponseNotOk(status int, code uint32, msg string)*Response{
+func NewResponseNotOk(status int, code uint32, msg string) *Response {
 	response := pool.Get().(*Response)
 	response.HttpStatus = status
 	response.Result.Code = code
@@ -44,18 +44,18 @@ func NewResponseNotOk(status int, code uint32, msg string)*Response{
 	return response
 }
 
-func PutResponse(res *Response){
-	if res != nil{
+func PutResponse(res *Response) {
+	if res != nil {
 		res.Result.Data = nil
 		pool.Put(res)
 	}
 }
 
-func HttpResp(params ...interface{})*Response{
+func HttpResp(params ...interface{}) *Response {
 	var code uint32
 	var msg string
 	var data interface{}
-	for _,param := range(params){
+	for _, param := range params {
 		t := reflect.TypeOf(param).Kind()
 		switch t {
 		case reflect.Uint32:
@@ -66,9 +66,9 @@ func HttpResp(params ...interface{})*Response{
 			data = param
 		}
 	}
-	if msg == ""{
+	if msg == "" {
 		return NewResponseOk(http.StatusOK, code, data)
-	}else{
+	} else {
 		return NewResponseNotOk(http.StatusOK, code, msg)
 	}
 }

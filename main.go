@@ -8,6 +8,7 @@ import (
 	"auth2/router"
 	"auth2/utils/logger"
 	"auth2/utils/middlewares"
+	"auth2/utils/validators"
 	"flag"
 	"fmt"
 	"strconv"
@@ -17,6 +18,10 @@ func main() {
 	var db_flag string
 	flag.StringVar(&db_flag, "m", "", "数据迁移")
 	flag.Parse()
+
+	if err := validators.InitValidator(); err != nil {
+		panic(fmt.Errorf("params error:%s", err.Error()))
+	}
 
 	config.InitConf()
 

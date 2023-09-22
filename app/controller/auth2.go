@@ -14,12 +14,12 @@ import (
 var trans ut.Translator
 
 type Auth struct {
-	userService *service.AuthService
+	authService *service.AuthService
 }
 
 func NewAuth() Auth {
 	return Auth{
-		userService: service.NewAuthService(),
+		authService: service.NewAuthService(),
 	}
 }
 
@@ -28,7 +28,17 @@ func (a *Auth) Authorize(c *gin.Context) *httpResp.Response {
 	return httpResp.HttpResp(code.Success, "用户名不存在", map[string]string{"msg": "time"})
 }
 
-func (a *Auth) ODICProvider(c *gin.Context) *httpResp.Response {
+// ODICProvider odic 服务商
+// @Summary 服务商注册接口
+// @Description 服务商注册接口
+// @Tags 服务商相关接口
+// @Accept application/json
+// @Produce application/json
+// @Param data body service.OpenIDConfigRequest true  "服务商注册参数"
+// @Security ApiKeyAuth
+// @Success 200 {object} httpResp.Resp
+// @Router /auth/odic_providers/register [post]
+func (a *Auth) ODICProviderRegister(c *gin.Context) *httpResp.Response {
 	var data model.OpenIDConfig
 	if err := c.ShouldBind(&data); err != nil {
 		errs, ok := err.(validator.ValidationErrors)
@@ -37,9 +47,64 @@ func (a *Auth) ODICProvider(c *gin.Context) *httpResp.Response {
 		}
 		return httpResp.HttpResp(code.ParamsError, errs.Translate(trans))
 	}
-	err := a.userService.ODICProvider(data)
+	err := a.authService.ODICProviderRegister(data)
 	if err != nil {
 		return httpResp.HttpResp(code.DBError, err.Error())
 	}
 	return httpResp.HttpResp(code.Success)
+}
+
+// ODICProvider odic 服务商
+// @Summary 获取生成的应用凭证
+// @Description 获取生成的应用凭证
+// @Tags 服务商相关接口
+// @Accept application/json
+// @Produce application/json
+// @Security ApiKeyAuth
+// @Success 200 {object} httpResp.Resp
+// @Router /auth/applications/credentials [get]
+func (a *Auth) ProviderApplicationGenerateCredentials(c *gin.Context) *httpResp.Response {
+	data := a.authService.ProviderApplicationGenerateCredentials()
+	return httpResp.HttpResp(code.Success, data)
+
+}
+
+// ODICProvider odic 服务商
+// @Summary 服务商应用注册
+// @Description 服务商应用注册
+// @Tags 服务商相关接口
+// @Accept application/json
+// @Produce application/json
+// @Param data body service.ProviderApplicationRequest true  "服务商应用注册参数"
+// @Security ApiKeyAuth
+// @Success 200 {object} httpResp.Resp
+// @Router /auth/applications/register [post]
+func (a *Auth) ProviderApplicationRegister(c *gin.Context) *httpResp.Response {
+	var data model.ProviderApplication
+	if err := c.ShouldBind(&data); err != nil {
+		errs, ok := err.(validator.ValidationErrors)
+		if !ok {
+			return httpResp.HttpResp(code.ParamsError, err.Error())
+		}
+		return httpResp.HttpResp(code.ParamsError, errs.Translate(trans))
+	}
+	err := a.authService.ProviderApplicationRegister(data)
+	if err != nil {
+		return httpResp.HttpResp(code.DBError, err.Error())
+	}
+	return httpResp.HttpResp(code.Success)
+}
+
+// ODICProvider odic 服务商
+// @Summary 获取服务商应用
+// @Description 获取服务商应用
+// @Tags 服务商相关接口
+// @Accept application/json
+// @Produce application/json
+// @Security ApiKeyAuth
+// @Success 200 {object} httpResp.Resp
+// @Router /auth/applications [get]
+func (a *Auth) ProviderApplicationList(c *gin.Context) *httpResp.Response {
+	data := a.authService.ProviderApplicationList()
+	return httpResp.HttpResp(code.Success, data)
 }
