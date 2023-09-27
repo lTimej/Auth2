@@ -23,11 +23,6 @@ func NewAuth() Auth {
 	}
 }
 
-func (a *Auth) Authorize(c *gin.Context) *httpResp.Response {
-
-	return httpResp.HttpResp(code.Success, "用户名不存在", map[string]string{"msg": "time"})
-}
-
 // ODICProvider odic 服务商
 // @Summary 服务商注册接口
 // @Description 服务商注册接口
