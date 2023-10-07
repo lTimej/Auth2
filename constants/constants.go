@@ -6,4 +6,5 @@ const (
 	GRANT_AUTHORIZATION_CODE string = "authorization-code"
 	RS256_ALGORITHM          string = "RS256"
 	CLIENT_CONFIDENTIAL      string = "confidential"
+	REDIRECT_URL             string = "http://127.0.0.1:8000/oauth2/callback/"
 )

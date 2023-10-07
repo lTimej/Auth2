@@ -12,9 +12,9 @@ func ODICProviderCreate(op model.OpenIDConfig) error {
 	return nil
 }
 
-func GetODICProviderByProvideCode(providerCode string) *model.OpenIDConfig {
-	var oidc *model.OpenIDConfig
-	db.DB.Where("sched_provider_code = ?", providerCode).First(oidc)
+func GetODICProviderByProvideCode(providerCode string) model.OpenIDConfig {
+	var oidc model.OpenIDConfig
+	db.DB.Where("sched_provider_code = ?", providerCode).First(&oidc)
 	return oidc
 }
 
@@ -24,10 +24,10 @@ func GetProviderApplicationByCode(ProviderCode string) *model.ProviderApplicatio
 	return &pa
 }
 
-func GetProviderApplicationByClienId(client_id string) *model.ProviderApplication {
+func GetProviderApplicationByClienId(client_id string) model.ProviderApplication {
 	var pa model.ProviderApplication
 	db.DB.Where("client_id = ?", client_id).First(&pa)
-	return &pa
+	return pa
 }
 
 func ProviderApplicationCreate(pa model.ProviderApplication) error {

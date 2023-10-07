@@ -4,6 +4,7 @@ import (
 	"auth2/app/service"
 	"auth2/utils/code"
 	"auth2/utils/httpResp"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -28,8 +29,9 @@ func (oidc *OIDC) Authorize(c *gin.Context) *httpResp.Response {
 		}
 		return httpResp.HttpResp(code.ParamsError, errs.Translate(trans))
 	}
-	oidc.oidcService.Authorize(data)
-	return httpResp.HttpResp(code.Success, "用户名不存在", map[string]string{"msg": "time"})
+	url := oidc.oidcService.Authorize(data)
+	c.Redirect(http.StatusMovedPermanently, url)
+	return httpResp.HttpResp()
 }
 
 func (ocid *OIDC) GrantAndRedirect(c *gin.Context) *httpResp.Response {
